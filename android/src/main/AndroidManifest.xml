@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hayroyal.assignment.expensemanager3">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/expensemagernew"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.SplashScreen"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait">
+
+            <!-- Parent activity meta-data to support Android 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hayroyal.assignment.expensemanager3.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CategoryEditActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible">
+
+            <!-- Parent activity meta-data to support Android 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hayroyal.assignment.expensemanager3.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ExpenseEditActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible">
+
+            <!-- Parent activity meta-data to support Android 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hayroyal.assignment.expensemanager3.activities.MainActivity" />
+        </activity>
+
+        <provider
+            android:name=".providers.ExpensesProvider"
+            android:authorities="com.hayroyal.assignment.expensemanager3.provider" />
+
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.CreatePasswordActivity" />
+        <activity android:name=".activities.EnterPasswordActivity"></activity>
+    </application>
+
+</manifest>
